@@ -1,0 +1,25 @@
+{
+  "name": "hngi9-backend-assessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benrobo/HNGI9-Backend-Assessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Benrobo/HNGI9-Backend-Assessment/issues"
+  },
+  "homepage": "https://github.com/Benrobo/HNGI9-Backend-Assessment#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
