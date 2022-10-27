@@ -40,4 +40,17 @@ You should get the following result in the terminal
 server started at http://localhost:5000
 ```
 
+### Step 4
+
+visit `http://localhost:5000/user` to see the below response.
+
+```json
+{
+"slackUsername":"benrobo",
+"backend": true,
+"age":20,
+"bio":"....."
+}
+```
+
 open the link in browser and you should be greeted with a text called `Hello World`
