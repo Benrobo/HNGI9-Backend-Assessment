@@ -23,7 +23,7 @@ app.get("/user", (req, res) => {
   const payload ={
     slackUsername:"Benrobo",
     backend: true,
-    age:"20",
+    age:20,
     bio: `I"m a chef 🧑‍🍳, who cooks but not in a kitchen. I solve problem for a living using 1's and 0's 🧑‍💻.
       Fullstack Software Engineer`
   }
