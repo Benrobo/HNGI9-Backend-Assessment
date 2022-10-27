@@ -8,7 +8,7 @@ This is just a basic `nodejs` assignment for the `backend` section in `HNGI9`.
 
 ### Deployed to Railway.app
 
-[Live URL](https://hngi9-backend-assessment-production.up.railway.app/)
+[Live URL](https://hng-task1-s07a.onrender.com/user)
 
 ### Setting up.
 
