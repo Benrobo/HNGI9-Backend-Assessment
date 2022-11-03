@@ -53,4 +53,24 @@ visit `http://localhost:5000/user` to see the below response.
 }
 ```
 
+### Task 2
+Making some calculations.
+visit `http://localhost:5000/compute` and pass in a payload in the below format.
+
+```js
+{
+    "operation_type": "multiplication",
+    "x": "5",
+    "y": "5"
+}
+```
+Result should be
+```js
+{
+  "slackUsername": "Benrobo",
+  "operation_type": "multiplication",
+  "result": 25
+}
+```
+
 open the link in browser and you should be greeted with a text called `Hello World`
