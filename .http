@@ -17,11 +17,11 @@
 # }
 
 
-POST http://localhost:5000/compute
+POST https://hng-task1-s07a.onrender.com/compute
 content-type: application/json
 
 {
-    "operation_type": "subtract 6 from 8",
-    "x": 0,
-    "y": 0
+    "operation_type": "add 4 to 7",
+    "x": 45,
+    "y": 3
 }
