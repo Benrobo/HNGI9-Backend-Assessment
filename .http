@@ -17,11 +17,11 @@
 # }
 
 
-POST https://ill-plum-bandicoot-boot.cyclic.app/compute
+POST http://localhost:5000/compute
 content-type: application/json
 
 {
-    "operation_type": "difference",
+    "operation_type": "what is the difference of",
     "x": 51,
     "y": 5
 }
