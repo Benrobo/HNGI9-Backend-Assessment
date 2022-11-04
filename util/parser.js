@@ -67,7 +67,7 @@ async function parserOperationalResponse(payload) {
             parsedRes["result"] = +finalRes[finalRes.length - 1].trim().replace("/(.+)(.)$/", '').replace(",", "")
             return parsedRes
         } catch (e) {
-            console.log(e.message)
+            console.log(e)
             parsedRes.error = true;
             parsedRes["msg"] = "Invalid Operation Type"
             parsedRes["type"] = "Invalid Operation Type. AI Prediction failed."
