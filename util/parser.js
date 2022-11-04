@@ -12,19 +12,22 @@ async function parserOperationalResponse(payload) {
         type: "",
         result: 0
     };
+    // sanitized any operation passed in.
+    const sanitized_operation_type = operation_type.trim().toLowerCase()
 
     const validEnums = ["multiplication", "addition", "subtraction", "multiply", "add", "subtract", "sum", "product", "togetherness", "plus"];
 
-    const opType = getAvailableTask(validEnums, operation_type)
-    parsedRes["type"] = opType.join(" ")
+    const opType = getAvailableTask(validEnums, sanitized_operation_type)
+    parsedRes["type"] = opType.join(" ") || "Operation Type not found"
 
-    if (operation_type.split(" ").length > 1) {
+
+    if (sanitized_operation_type.split(" ").length > 1) {
         try {
             // predict output result
-            const AI_PREDICTION = await predictIntent(operation_type)
+            const AI_PREDICTION = await predictIntent(sanitized_operation_type)
             const choices = AI_PREDICTION.choices[0];
             const finalRes = choices.text.split(" ")
-            parsedRes["result"] = +finalRes[finalRes.length - 1].trim().replace(".", '').replace(",", "")
+            parsedRes["result"] = +finalRes[finalRes.length - 1].trim().replace("/(.+)(.)$/", '').replace(",", "")
             return parsedRes
         } catch (e) {
             console.log(e.message)
@@ -37,8 +40,8 @@ async function parserOperationalResponse(payload) {
     }
     else {
         // console.log(operation_type)
-        if (validEnums.includes(operation_type.toLowerCase())) {
-            switch (operation_type) {
+        if (validEnums.includes(sanitized_operation_type)) {
+            switch (operation_type.trim().toLowerCase()) {
                 case "multiply":
                 case "multiplication":
                 case "product":
