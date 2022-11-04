@@ -13,6 +13,11 @@ async function parserOperationalResponse(payload) {
         result: 0
     };
 
+    const validEnums = ["multiplication", "addition", "subtraction", "multiply", "add", "divide", "subtract", "division", "sum", "product", "togetherness"];
+
+    const opType = getAvailableTask(validEnums, operation_type)
+    parsedRes["type"] = opType.join(" ")
+
     if (operation_type.length > 15) {
         try {
             // predict output result
@@ -29,7 +34,6 @@ async function parserOperationalResponse(payload) {
         }
     }
     else {
-        const validEnums = ["multiplication", "addition", "subtraction", "multiply", "add", "divide", "subtract", "division", "sum", "product"];
         console.log(operation_type)
         if (validEnums.includes(operation_type.toLowerCase())) {
             switch (operation_type) {
@@ -66,5 +70,41 @@ async function parserOperationalResponse(payload) {
     }
 }
 
+function getAvailableTask(validEnums, operation_type) {
+    const arrOptype = operation_type.split(" ")
+    const filteredType = arrOptype.filter((data, i) => validEnums.includes(data))
+
+    const newType = filteredType.map((data) => {
+        switch (data) {
+            case "multiply":
+            case "multiplication":
+            case "product":
+                data = "Multiplication"
+                break;
+            case "subtract":
+            case "subtraction":
+            case "minus":
+                data = "Subtraction"
+                break;
+            case "addition":
+            case "add":
+            case "sum":
+                data = "Addition"
+                break;
+            case "divide":
+            case "division":
+                data = "Division"
+                break;
+
+            default:
+                data = ""
+                break;
+        }
+
+        return data
+    })
+
+    return newType
+}
 
 module.exports = parserOperationalResponse
