@@ -13,6 +13,7 @@ function solveQuestion(operation_type, x, y) {
         case "subtract":
         case "subtraction":
         case "minus":
+        case "difference":
         case "-":
             result = x > y ? x - y : y - x
             break;

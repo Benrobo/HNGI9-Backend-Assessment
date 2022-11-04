@@ -18,7 +18,7 @@ async function parserOperationalResponse(payload) {
     const sanitized_operation_type = operation_type.trim().toLowerCase()
 
     // valid mathematical terms
-    const validEnums = ["multiplication", "addition", "subtraction", "multiply", "add", "subtract", "sum", "product", "togetherness", "plus", "+", "-", "*"];
+    const validEnums = ["multiplication", "addition", "subtraction", "multiply", "add", "subtract", "difference", "sum", "product", "togetherness", "plus", "+", "-", "*"];
 
     // valid mathmatical symbols
     const validMathSymb = ["+", "*", "-"]
