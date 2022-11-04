@@ -1,6 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 const bodyParser = require("body-parser")
+const handleCalculations = require("./service/handleCalc")
 
 const app = express()
 // middleware setup
@@ -33,58 +34,8 @@ app.get("/user", (req, res) => {
 
 // handle mathematical calculation ( Task 3 )
 app.post("/compute", (req, res) => {
-
-  const validEnums = ["multiplication", "addition", "subtraction"]
-
-  const { x, y, operation_type } = req.body;
-
-  let result = 0;
-
-  const sendPayload = (code = 200) => {
-    if (code === 200) {
-      return res.status(code).json({
-        slackUsername: "Benrobo",
-        operation_type,
-        result
-      })
-    }
-    return res.status(code).json({
-      slackUsername: "Benrobo",
-      operation_type: "Invalid operation type or value",
-      result
-    })
-  }
-
-  const isNotANumber = (param) => {
-    return isNaN(parseInt(param))
-  }
-
-  console.log(isNotANumber(x))
-
-  if (validEnums.includes(operation_type) && !isNotANumber(x) && !isNotANumber(y)) {
-
-    try {
-      operation_type === "addition" ?
-        result = parseInt(x) + parseInt(y)
-        :
-        operation_type === "multiplication" ?
-          result = parseInt(x) * parseInt(y)
-          :
-          operation_type === "subtraction" ?
-            result = parseInt(x) - parseInt(y)
-            :
-            result = 0
-
-      // send response to client
-      return sendPayload(200)
-    } catch (e) {
-      // if an error occur
-      return sendPayload(400)
-    }
-  }
-  sendPayload(400)
+  return handleCalculations(req, res)
 })
-
 
 
 app.listen(PORT, () => console.log(`server started at http://localhost:${PORT}`))
