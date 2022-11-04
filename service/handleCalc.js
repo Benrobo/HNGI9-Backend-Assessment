@@ -18,7 +18,7 @@ module.exports = handleCalculations
 function sendJsonResponse(res, code, type, oup) {
     res.status(code).json({
         slackUsername: "Benrobo",
-        operation_type: type,
+        operation_type: type.toLowerCase(),
         result: oup
     })
 }
