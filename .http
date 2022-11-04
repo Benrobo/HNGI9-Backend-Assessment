@@ -21,7 +21,7 @@ POST http://localhost:5000/compute
 content-type: application/json
 
 {
-    "operation_type": "divide 5 by 2 ",
+    "operation_type": "multiply",
     "x": 5,
     "y": 25
 }
