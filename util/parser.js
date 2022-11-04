@@ -13,7 +13,7 @@ async function parserOperationalResponse(payload) {
         result: 0
     };
 
-    const validEnums = ["multiplication", "addition", "subtraction", "multiply", "add", "divide", "subtract", "division", "sum", "product", "togetherness"];
+    const validEnums = ["multiplication", "addition", "subtraction", "multiply", "add", "divide", "subtract", "division", "sum", "product", "togetherness", "plus"];
 
     const opType = getAvailableTask(validEnums, operation_type)
     parsedRes["type"] = opType.join(" ")
@@ -51,6 +51,7 @@ async function parserOperationalResponse(payload) {
                 case "addition":
                 case "add":
                 case "sum":
+                case "plus":
                     parsedRes["result"] = x + y
                     break;
                 case "divide":
