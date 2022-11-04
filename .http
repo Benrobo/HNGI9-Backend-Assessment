@@ -21,7 +21,7 @@ POST http://localhost:5000/compute
 content-type: application/json
 
 {
-    "operation_type": "what is the sum of",
-    "x": 5,
-    "y": 25
+    "operation_type": "what is the product of 5 and 5",
+    "x": 51,
+    "y": 5
 }

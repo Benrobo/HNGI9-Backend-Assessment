@@ -36,8 +36,10 @@ async function parserOperationalResponse(payload) {
     // if the operation_type has only a question 
     // without any number present.
     if (hasNumber === false && (isNumber(x) && isNumber(y))) {
-        const result = solveQuestion(type, x, y);
-        parsedRes["result"] = result;
+        // const result = solveQuestion(type, x, y);
+        parsedRes["result"] = 0;
+        parsedRes["type"] = "invalid operator type";
+        parsedRes["error"] = true;
         return parsedRes
     }
 
