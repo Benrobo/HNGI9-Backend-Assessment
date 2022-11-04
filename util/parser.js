@@ -35,6 +35,12 @@ async function parserOperationalResponse(payload) {
 
     // if the operation_type has only a question 
     // without any number present.
+    // if (hasNumber === false && (isNumber(x) && isNumber(y))) {
+    //     const result = solveQuestion(type, x, y);
+    //     parsedRes["result"] = result;
+    //     return parsedRes
+    // }
+
     if (sanitized_operation_type.split(" ").length > 1 && sanitized_operation_type.split(" ").length !== 3 && hasNumber === false && (isNumber(x) && isNumber(y))) {
         // const result = solveQuestion(type, x, y);
         parsedRes["result"] = 0;
@@ -46,7 +52,7 @@ async function parserOperationalResponse(payload) {
 
     // check if operation_type contain 3 chars / integer along with a mathmatical symbols ( 4 + 5 )
     // only works for the above  condition
-    if (sanitized_operation_type.split(" ").length === 3) {
+    if (sanitized_operation_type.split(" ").length === 3 && hasNumber) {
         const splitedOperationType = sanitized_operation_type.split(" ");
 
         // iterate over the array and check if each item is found in the validSymb
