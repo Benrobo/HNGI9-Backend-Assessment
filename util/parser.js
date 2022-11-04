@@ -35,7 +35,7 @@ async function parserOperationalResponse(payload) {
         }
     }
     else {
-        console.log(operation_type)
+        // console.log(operation_type)
         if (validEnums.includes(operation_type.toLowerCase())) {
             switch (operation_type) {
                 case "multiply":
