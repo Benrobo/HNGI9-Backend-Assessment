@@ -35,19 +35,19 @@ async function parserOperationalResponse(payload) {
 
     // if the operation_type has only a question 
     // without any number present.
-    // if (hasNumber === false && (isNumber(x) && isNumber(y))) {
-    //     const result = solveQuestion(type, x, y);
-    //     parsedRes["result"] = result;
-    //     return parsedRes
-    // }
-
-    if (sanitized_operation_type.split(" ").length > 1 && sanitized_operation_type.split(" ").length !== 3 && hasNumber === false && (isNumber(x) && isNumber(y))) {
-        // const result = solveQuestion(type, x, y);
-        parsedRes["result"] = 0;
-        parsedRes["type"] = "invalid operator type";
-        parsedRes["error"] = true;
+    if (hasNumber === false && (isNumber(x) && isNumber(y))) {
+        const result = solveQuestion(type, x, y);
+        parsedRes["result"] = result;
         return parsedRes
     }
+
+    // if (sanitized_operation_type.split(" ").length > 1 && sanitized_operation_type.split(" ").length !== 3 && hasNumber === false && (isNumber(x) && isNumber(y))) {
+    //     // const result = solveQuestion(type, x, y);
+    //     parsedRes["result"] = 0;
+    //     parsedRes["type"] = "invalid operator type";
+    //     parsedRes["error"] = true;
+    //     return parsedRes
+    // }
 
 
     // check if operation_type contain 3 chars / integer along with a mathmatical symbols ( 4 + 5 )
