@@ -1,8 +1,27 @@
+# POST http://localhost:5000/compute
+# content-type: application/json
+
+# {
+#     "operation_type": "multiplication",
+#     "x": 6,
+#     "y": 7
+# }
+
+# POST http://localhost:5000/compute
+# content-type: application/json
+
+# {
+#     "operation_type": "find the product of 54 and 27",
+#     "x": 0,
+#     "y": 0
+# }
+
+
 POST http://localhost:5000/compute
 content-type: application/json
 
 {
-    "operation_type": "multiplication",
-    "x": "5",
-    "y": "5"
+    "operation_type": "please sum up 23,34,56 and multiply the result by 65 divide the final result by 2",
+    "x": 0,
+    "y": 0
 }
