@@ -21,7 +21,7 @@ POST https://ill-plum-bandicoot-boot.cyclic.app/compute
 content-type: application/json
 
 {
-    "operation_type": "can you add",
+    "operation_type": "difference",
     "x": 51,
     "y": 5
 }

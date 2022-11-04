@@ -124,6 +124,7 @@ function getAvailableTask(validEnums, operation_type) {
             case "subtract":
             case "subtraction":
             case "minus":
+            case "difference":
             case "-":
                 data = "subtraction"
                 break;
