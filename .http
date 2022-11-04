@@ -17,11 +17,11 @@
 # }
 
 
-POST https://hng-task1-s07a.onrender.com/compute
+POST http://localhost:5000/compute
 content-type: application/json
 
 {
-    "operation_type": "subtract 5 from 10 and add 20 to the final result",
-    "x": 45,
-    "y": 3
+    "operation_type": "divide 5 by 2 ",
+    "x": 5,
+    "y": 25
 }
