@@ -21,7 +21,7 @@ POST https://hng-task1-s07a.onrender.com/compute
 content-type: application/json
 
 {
-    "operation_type": "add 4 to 7",
+    "operation_type": "subtract 5 from 10 and add 20 to the final result",
     "x": 45,
     "y": 3
 }

@@ -13,7 +13,7 @@ async function parserOperationalResponse(payload) {
         result: 0
     };
 
-    const validEnums = ["multiplication", "addition", "subtraction", "multiply", "add", "divide", "subtract", "division", "sum", "product", "togetherness", "plus"];
+    const validEnums = ["multiplication", "addition", "subtraction", "multiply", "add", "subtract", "sum", "product", "togetherness", "plus"];
 
     const opType = getAvailableTask(validEnums, operation_type)
     parsedRes["type"] = opType.join(" ")
@@ -29,7 +29,8 @@ async function parserOperationalResponse(payload) {
         } catch (e) {
             console.log(e.message)
             parsedRes.error = true;
-            parsedRes["msg"] = "AI Prediction Failed.." + e.message
+            parsedRes["msg"] = "Invalid Operation Type"
+            parsedRes["type"] = "Invalid Operation Type. AI Prediction failed."
             parsedRes["result"] = 0;
             return parsedRes
         }
@@ -52,13 +53,9 @@ async function parserOperationalResponse(payload) {
                 case "add":
                 case "sum":
                 case "plus":
+                case "togetherness":
                     parsedRes["result"] = x + y
                     break;
-                case "divide":
-                case "division":
-                    parsedRes["result"] = x / y
-                    break;
-
                 default:
                     parsedRes["result"] = 0
                     break;
@@ -66,7 +63,8 @@ async function parserOperationalResponse(payload) {
             return parsedRes
         }
         parsedRes.error = true;
-        parsedRes["msg"] = "Invalid Operational Type"
+        parsedRes["msg"] = "Invalid Operation Type"
+        parsedRes["type"] = "Invalid Operation Type"
         parsedRes["result"] = 0;
         return parsedRes
     }
