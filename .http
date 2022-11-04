@@ -17,11 +17,11 @@
 # }
 
 
-POST http://localhost:5000/compute
+POST https://filthy-scarf-bull.cyclic.app/compute
 content-type: application/json
 
 {
-    "operation_type": "what is the difference of",
-    "x": 51,
-    "y": 5
+    "operation_type": "subtraction",
+    "x": 300,
+    "y": 200
 }
