@@ -21,7 +21,7 @@ POST http://localhost:5000/compute
 content-type: application/json
 
 {
-    "operation_type": "6 * 5",
+    "operation_type": "6 + 5",
     "x": 5,
     "y": 25
 }

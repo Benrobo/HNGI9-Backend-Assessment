@@ -27,7 +27,7 @@ async function parserOperationalResponse(payload) {
     // check if operational_type has duplicate types
     const duplicateTypes = checkDuplicateTypes(opType)
 
-    parsedRes["type"] = duplicateTypes > 1 ? opType[0] : opType.join(" ") || "Operation Type not found"
+    parsedRes["type"] = duplicateTypes > 1 ? opType.join(" ") : opType.join(" ") || "Operation Type not found"
 
 
     // check if operation_type contain 3 chars / integer along with a mathmatical symbols ( 4 + 5 )
