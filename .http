@@ -17,11 +17,11 @@
 # }
 
 
-POST https://ill-plum-bandicoot-boot.cyclic.app/compute
+POST http://localhost:5000/compute
 content-type: application/json
 
 {
-    "operation_type": "subtract 100 from 200 and multiply the final result by 5",
+    "operation_type": "what is the sum of",
     "x": 5,
     "y": 25
 }
