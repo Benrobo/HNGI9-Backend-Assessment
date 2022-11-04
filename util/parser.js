@@ -18,7 +18,7 @@ async function parserOperationalResponse(payload) {
     const opType = getAvailableTask(validEnums, operation_type)
     parsedRes["type"] = opType.join(" ")
 
-    if (operation_type.length > 15) {
+    if (operation_type.split(" ").length > 1) {
         try {
             // predict output result
             const AI_PREDICTION = await predictIntent(operation_type)
@@ -27,6 +27,7 @@ async function parserOperationalResponse(payload) {
             parsedRes["result"] = +finalRes[finalRes.length - 1].trim().replace(".", '').replace(",", "")
             return parsedRes
         } catch (e) {
+            console.log(e.message)
             parsedRes.error = true;
             parsedRes["msg"] = "AI Prediction Failed.." + e.message
             parsedRes["result"] = 0;

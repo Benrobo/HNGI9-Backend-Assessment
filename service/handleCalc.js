@@ -9,6 +9,7 @@ async function handleCalculations(req, res) {
         console.log(msg)
         return sendJsonResponse(res, 200, type, result)
     }
+    console.log(msg)
     return sendJsonResponse(res, 400, type, result)
 }
 
