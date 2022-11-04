@@ -17,11 +17,11 @@
 # }
 
 
-POST http://localhost:5000/compute
+POST https://ill-plum-bandicoot-boot.cyclic.app/compute
 content-type: application/json
 
 {
-    "operation_type": "subtraction",
+    "operation_type": "can you add",
     "x": 51,
     "y": 5
 }
